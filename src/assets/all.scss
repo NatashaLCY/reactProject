@@ -1,0 +1,53 @@
+@import 'bootstrap/scss/functions';
+@import 'helpers/variables';
+// @import 'helpers/variables-dark';
+// @import 'helpers/custom.scss';
+
+@import 'bootstrap/scss/bootstrap';
+
+
+.HighlightYellow{
+    background-color: $HighlightYellow;
+}
+// .border-primary{
+//     // border-color: $green;
+//     border-color: $primary;
+// }
+.ptpb-20 {
+    padding: 80px 0;
+}
+.pb-20 {
+    padding: 0 0 80px 0;
+}
+.special-title {
+    // text-align: center;
+    // font-size: 1.5rem;
+    // font-weight: bold;
+    // position: relative;
+    // display: inline-block;
+    // padding: 0 1rem;
+    
+    &::before,
+    &::after {
+        content: "—";
+        margin: 0 0.5rem;
+        // color: #3F8CB8;
+    }
+}
+.text-primary-700{
+    color: #265B7E;
+}
+
+.bannerText{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 55%;
+    padding: 70px 0 0 0;
+    color: #fff;
+    text-align: left;
+}

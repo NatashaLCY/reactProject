@@ -16,6 +16,7 @@ export default function CartPage() {
             const res = await axios.get(`${BASE_URL}/v2/api/${API_PATH}/cart`);
             setCart(res.data.data);
             //data axios的data，data回傳資料的data
+			console.log('res', res);
         } catch (error) {
             alert("取得購物車失敗");
         }

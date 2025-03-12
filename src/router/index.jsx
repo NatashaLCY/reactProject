@@ -1,7 +1,7 @@
 import { createHashRouter } from "react-router-dom";
 import FrontLayout from "../layout/FrontLayout";
 import HomePage from "../pages/HomePage";
-import ProductsPage from "../pages/productsPage";
+import ProductsPage from "../pages/ProductsPage";
 import ProductsDetailPage from "../pages/ProductDetailPage";
 import AboutPage from "../pages/AboutPage";
 import SalesService from "../pages/SalesServicePage";

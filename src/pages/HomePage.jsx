@@ -1,5 +1,5 @@
 export default function HomePage() {
-    return (
+	return (
 		<div className="container-fluid gx-0">
 			<div className="news">
 				<div className="row text-center pt-3 HighlightYellow gx-0">
@@ -8,14 +8,17 @@ export default function HomePage() {
 			</div>
 			<div id="carouselExample" className="carousel slide gx-0">
 				<div className="carousel-inner">
-					<div className="carousel-item active">
-						<img src="https://images.unsplash.com/photo-1522199710521-72d69614c702?q=80&w=1744&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" className="d-block w-100" alt="slide01" />
+					<div className="carousel-item active position-relative">
+						<img src="https://images.unsplash.com/photo-1522199710521-72d69614c702?q=80&w=1744&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" className="d-block w-100 img-blend" alt="slide01" />
+						<div className="position-absolute top-0 start-0 w-100 h-100 bg-overlay"></div>
 					</div>
 					<div className="carousel-item">
 						<img src="https://images.unsplash.com/flagged/photo-1568041193043-e86f15540986?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" className="d-block w-100" alt="slide02" />
+						<div className="position-absolute top-0 start-0 w-100 h-100 bg-overlay"></div>
 					</div>
 					<div className="carousel-item">
 						<img src="https://images.unsplash.com/photo-1495704907664-81f74a7efd9b?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" className="d-block w-100" alt="slide03" />
+						<div className="position-absolute top-0 start-0 w-100 h-100 bg-overlay"></div>
 					</div>
 				</div>
 				<button className="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
@@ -33,10 +36,10 @@ export default function HomePage() {
 					<span className="visually-hidden">Next</span>
 				</button>
 			</div>
-			<div className="collectionHighlights ptpb-20">
+			<div className="collectionHighlights py-8">
 				<div className="container">
 					<div className="row">
-						<h3 className="text-center pb-20 special-title text-primary-700">鎮店之寶</h3>
+						<h3 className="text-center pb-8 special-title text-primary-700">鎮店之寶</h3>
 					</div>
 					<div className="row">
 						<div className="card px-0 border-0 me-4 col rounded-0">
@@ -138,10 +141,10 @@ export default function HomePage() {
 					</div>
 				</div>
 			</div>
-			<div className="newArrivals ptpb-20">
+			<div className="newArrivals py-8">
 				<div className="container">
 					<div className="row">
-						<h3 className="text-center pb-20 special-title text-primary-700">新品上架</h3>
+						<h3 className="text-center pb-8 special-title text-primary-700">新品上架</h3>
 					</div>
 					<div className="row my-3">
 						<div className="card px-0 border-0 me-4 col rounded-0">
@@ -183,10 +186,10 @@ export default function HomePage() {
 					</div>
 				</div>
 			</div>
-			<div className="group ptpb-20">
+			<div className="group py-8">
 				<div className="container">
 					<div className="row">
-						<h3 className="text-center pb-20 special-title text-primary-700">你是以下族群嗎</h3>
+						<h3 className="text-center pb-8 special-title text-primary-700">你是以下族群嗎</h3>
 					</div>
 					<div className="row my-3">
 						<div className="card px-0 border-0 me-4 col rounded-0">
@@ -228,10 +231,10 @@ export default function HomePage() {
 					</div>
 				</div>
 			</div>
-			<div className="feature ptpb-20">
+			<div className="feature py-8">
 				<div className="container">
 					<div className="row">
-						<h3 className="text-center pb-20 special-title text-primary-700">旅人集所の特色</h3>
+						<h3 className="text-center pb-8 special-title text-primary-700">旅人集所の特色</h3>
 					</div>
 					<div className="row my-3">
 						<div className="card px-0 border-0 me-4 col rounded-0">
@@ -273,10 +276,10 @@ export default function HomePage() {
 					</div>
 				</div>
 			</div>
-			<div className="evaluate ptpb-20">
+			<div className="evaluate py-8">
 				<div className="container">
 					<div className="row">
-						<h3 className="text-center pb-20 special-title text-primary-700">顧客の好評</h3>
+						<h3 className="text-center pb-8 special-title text-primary-700">顧客の好評</h3>
 					</div>
 					<div className="row my-3">
 						<div className="card px-0 border-0 me-4 col rounded-0">

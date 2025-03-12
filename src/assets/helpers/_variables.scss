@@ -7,17 +7,18 @@
 
 // scss-docs-start gray-color-variables
 $white:    #fff !default;
-$gray-100: #f8f9fa !default;
-$gray-200: #e9ecef !default;
-$gray-300: #dee2e6 !default;
-$gray-400: #ced4da !default;
-$gray-500: #adb5bd !default;
-$gray-600: #6c757d !default;
-$gray-700: #495057 !default;
-$gray-800: #343a40 !default;
-$gray-900: #212529 !default;
+$gray-100: #FAFAFA !default;//modify #f8f9fa
+$gray-200: #F5F5F5 !default;//modify #e9ecef
+$gray-300: #F0F0F0 !default;//modify #dee2e6
+$gray-400: #DEDEDE !default;//modify #ced4da
+$gray-500: #C2C2C2 !default;//modify #adb5bd
+$gray-600: #979797 !default;//modify #6c757d
+$gray-700: #818181 !default;//modify #495057
+$gray-800: #606060 !default;//modify #343a40
+$gray-900: #3C3C3C !default;//modify #212529
 $black:    #000 !default;
 $HighlightYellow: #FCEE96 !default;//modify
+$HighlightRed: #DF5038 !default;//modify
 // scss-docs-end gray-color-variables
 
 // fusv-disable
@@ -25,7 +26,7 @@ $HighlightYellow: #FCEE96 !default;//modify
 $grays: (
   "100": $gray-100,
   "200": $gray-200,
-  "300": $gray-300,
+  "300": $gray-300, 
   "400": $gray-400,
   "500": $gray-500,
   "600": $gray-600,
@@ -78,16 +79,16 @@ $color-contrast-dark:      $black !default;
 $color-contrast-light:     $white !default;
 
 // fusv-disable
-$blue-50: tint-color($blue, 90%) !default;//modify
-$blue-100: tint-color($blue, 80%) !default;
-$blue-200: tint-color($blue, 60%) !default;
-$blue-300: tint-color($blue, 40%) !default;
-$blue-400: tint-color($blue, 20%) !default;
+$blue-50: #F3F8FC !default;//modify tint-color($blue, 90%)
+$blue-100: #E7F0F7 !default;//modify tint-color($blue, 80%)
+$blue-200: #C9DFEE !default;//modify tint-color($blue, 60%)
+$blue-300: #7EB6D7 !default;//modify tint-color($blue, 40%)
+$blue-400: #63A7CD !default;//modify tint-color($blue, 20%)
 $blue-500: $blue !default;
-$blue-600: shade-color($blue, 20%) !default;
-$blue-700: shade-color($blue, 40%) !default;
-$blue-800: shade-color($blue, 60%) !default;
-$blue-900: shade-color($blue, 80%) !default;
+$blue-600: #2E719B !default;//modify shade-color($blue, 20%)
+$blue-700: #265B7E !default;//modify shade-color($blue, 40%)
+$blue-800: #234D69 !default;//modify shade-color($blue, 60%)
+$blue-900: #224158 !default;//modify shade-color($blue, 80%)
 
 $indigo-100: tint-color($indigo, 80%) !default;
 $indigo-200: tint-color($indigo, 60%) !default;
@@ -302,16 +303,16 @@ $cyans: (
 // fusv-enable
 
 // scss-docs-start theme-color-variables
-$primary_50:       $blue !default;
-$primary_100:      $blue !default;
-$primary_200:      $blue !default;
-$primary_300:      $blue !default;
-$primary_400:      $blue !default;
-$primary:          $blue !default;
-$primary_600:      $blue !default;
-$primary_700:      $blue !default;
-$primary_800:      $blue !default;
-$primary_900:      $blue !default;
+$primary_50:  $blue-50 !default;
+$primary_100: $blue-100 !default;
+$primary_200: $blue-200 !default;
+$primary_300: $blue-300 !default;
+$primary_400: $blue-400 !default;
+$primary:     $blue-500 !default;
+$primary_600: $blue-600 !default;
+$primary_700: $blue-700 !default;
+$primary_800: $blue-800 !default;
+$primary_900: $blue-900 !default;
 
 $secondary:     $gray-600 !default;
 $success:       $green !default;
@@ -321,6 +322,7 @@ $danger:        $red !default;
 $light:         $gray-100 !default;
 $dark:          $gray-900 !default;
 $HighlightYellow:$HighlightYellow !default; //modify
+$HighlightRed:$HighlightRed !default; //modify
 // scss-docs-end theme-color-variables
 
 // scss-docs-start theme-colors-map
@@ -343,6 +345,7 @@ $theme-colors: (
   "light":      $light,
   "dark":       $dark,
   "HighlightYellow": $HighlightYellow,//modify
+  "HighlightRed": $HighlightRed,//modify
 ) !default;
 // scss-docs-end theme-colors-map
 
@@ -435,11 +438,14 @@ $gradient: linear-gradient(180deg, rgba($white, .15), rgba($white, 0)) !default;
 $spacer: 1rem !default;
 $spacers: (
   0: 0,
-  1: $spacer * .25,
-  2: $spacer * .5,
-  3: $spacer,
-  4: $spacer * 1.5,
-  5: $spacer * 3,
+  1: $spacer * .25,//4
+  2: $spacer * .5,//8
+  3: $spacer, //16
+  4: $spacer * 1.5,//24
+  5: $spacer * 3,//48
+  6: $spacer * 4,//64 modify
+  7: $spacer * 4.5,//72 modify
+  8: $spacer * 5,//80 modify
 ) !default;
 // scss-docs-end spacer-variables-maps
 
@@ -655,13 +661,13 @@ $line-height-base:            1.5 !default;
 $line-height-sm:              1.25 !default;
 $line-height-lg:              2 !default;
 
-$h1-font-size:                $font-size-base * 2.5 !default;
-$h2-font-size:                $font-size-base * 2 !default;
-$h3-font-size:                $font-size-base * 1.75 !default;
-$h4-font-size:                $font-size-base * 1.5 !default;
-$h5-font-size:                $font-size-base * 1.25 !default;
-$h6-font-size:                $font-size-base !default;
-$h7-font-size:                $font-size-base * 0.875 !default;//modify
+$h1-font-size:                $font-size-base * 2.5 !default;//40
+$h2-font-size:                $font-size-base * 2 !default;//32
+$h3-font-size:                $font-size-base * 1.75 !default;//28
+$h4-font-size:                $font-size-base * 1.5 !default;//24
+$h5-font-size:                $font-size-base * 1.25 !default;//20
+$h6-font-size:                $font-size-base !default;//16
+$h7-font-size:                $font-size-base * 0.875 !default;//modify 14
 // scss-docs-end font-variables
 
 // scss-docs-start font-sizes

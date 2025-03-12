@@ -1,7 +1,7 @@
 export default function SalesServicePage() {
 	return (
 		<>
-			<div className="container mt-5">
+			<div className="container mt-5 mb-8">
 				<h2 className="text-center mb-4">售後服務</h2>
 				<div className="accordion" id="serviceAccordion">
 					<div className="accordion-item">

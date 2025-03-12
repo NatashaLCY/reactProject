@@ -51,8 +51,19 @@ export default function ProductsDetailPage() {
 
 	return (
 		<>
-		<h1>產品列表頁</h1>
-			<div className="container mt-5">
+			<div className="banner">
+				<div className="container-fluid gx-0" style={{ height: "50vh" }}>
+					<div className="h-100 bg-primary">
+						<img
+							className="w-100 h-100"
+							style={{ objectFit: "cover", objectPosition: "top" }}
+							src="https://img.freepik.com/free-photo/flat-lay-composition-different-traveling-elements_23-2148884946.jpg?t=st=1741776427~exp=1741780027~hmac=5f40c33c81d97ef42f5ea9d94796e542e2dd07dbd8ddc5f82eb85200395f7970&w=1380"
+							alt="產品詳細頁banner"
+						/>
+					</div>
+				</div>
+			</div>
+			<div className="container my-8">
 				<div className="row">
 					<div className="col-6">
 						<img className="img-fluid" src={product.imageUrl} alt={product.title} />
@@ -81,19 +92,19 @@ export default function ProductsDetailPage() {
 					</div>
 				</div>
 			</div>
-            {isScreenLoading && (
-                <div
-                    className="d-flex justify-content-center align-items-center"
-                    style={{
-                        position: "fixed",
-                        inset: 0,
-                        backgroundColor: "rgba(255,255,255,0.3)",
-                        zIndex: 999,
-                    }}
-                >
-                    <ReactLoading type="spin" color="black" width="4rem" height="4rem" />
-                </div>
-            )}
+			{isScreenLoading && (
+				<div
+					className="d-flex justify-content-center align-items-center"
+					style={{
+						position: "fixed",
+						inset: 0,
+						backgroundColor: "rgba(255,255,255,0.3)",
+						zIndex: 999,
+					}}
+				>
+					<ReactLoading type="spin" color="black" width="4rem" height="4rem" />
+				</div>
+			)}
 		</>
 	);
 }

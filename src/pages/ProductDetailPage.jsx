@@ -49,6 +49,7 @@ export default function ProductsDetailPage() {
     };
 
 
+
 	return (
 		<>
 			<div className="banner">

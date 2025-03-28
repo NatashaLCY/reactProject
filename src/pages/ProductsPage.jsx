@@ -12,12 +12,25 @@ export default function ProductsPage() {
 	const [isScreenLoading, setIsScreenLoading] = useState(false);
 	// const [selectedCategory, setSelectedCategory] = useState("C003");
 	// const [isLoading, setIsLoading] = useState(false);
+	const getAllProducts = async () => {
+		setIsScreenLoading(true);
+		try {
+			const allProducts = await axios.get(`${BASE_URL}/v2/api/${API_PATH}/products/all`);
+			console.log("allProducts:", allProducts.data.products);	
+			setProducts(allProducts.data.products);
+		} catch (error) {
+			console.log("error:", error);
+			alert("取得產品失敗");
+		}
+		finally {
+			setIsScreenLoading(false);
+		}
+	}
 	const getProducts = async(page=1)=>{
 		setIsScreenLoading(true);
 		try {
 			const res = await axios.get(`${BASE_URL}/v2/api/${API_PATH}/products?page=${page}`);
-			console.log("res:", res.data.products);
-			setProducts(res.data.products);
+			// setProducts(res.data.products);
 			setPageInfo(res.data.pagination);
 		} catch (error) {
 			console.log('error:', error);
@@ -28,17 +41,32 @@ export default function ProductsPage() {
 	}
 	useEffect(()=>{
 		getProducts();
+		getAllProducts();
 	},[])
 
 	const handlePageChange = (page) => {
 		getProducts(page);
 	};
 
-	const [filteredProducts, setFilteredProducts] = useState(products);
-	const StorageList = () => {
-		const Storage = products.filter((product) => product.category === "收納神器");
-		setFilteredProducts(Storage);
+	// const [filteredProducts, setFilteredProducts] = useState(products);
+	// const StorageList = () => {
+	// 	const Storage = products.filter((product) => product.category === "收納神器");
+	// 	setFilteredProducts(Storage);
+	// };
+
+	const [selectedCategory, setSelectedCategory] = useState("收納神器");
+	const [filteredProducts, setFilteredProducts] = useState([]);
+	useEffect(() => {
+		console.log("products:", products);
+		const filtered = products.filter((product) => product.category === selectedCategory);
+		setFilteredProducts(filtered);
+	}, [selectedCategory, products]);
+
+	const handleCategoryChange = (category) => {
+		setSelectedCategory(category);
 	};
+
+
 	// const applyDiscount = () => {
 	// 	const discounted = products.map((product) => ({
 	// 		...product,
@@ -126,7 +154,8 @@ export default function ProductsPage() {
 									</button>
 								</h2>
 								<div id="collapseOne" className="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-									<div className="accordion-body" onClick={StorageList}>
+									{/* <div className="accordion-body" onClick={StorageList}> */}
+									<div className="accordion-body" onClick={() => handleCategoryChange("收納神器")}>
 										收納神器
 									</div>
 								</div>
@@ -138,8 +167,12 @@ export default function ProductsPage() {
 									</button>
 								</h2>
 								<div id="collapseTwo" className="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-									<div className="accordion-body">熱銷排行榜</div>
-									<div className="accordion-body">高評價推薦</div>
+									<div className="accordion-body" onClick={() => handleCategoryChange("熱銷排行榜")}>
+										熱銷排行榜
+									</div>
+									<div className="accordion-body" onClick={() => handleCategoryChange("高評價推薦")}>
+										高評價推薦
+									</div>
 									<div className="accordion-body">回購率最高</div>
 								</div>
 							</div>
@@ -173,9 +206,15 @@ export default function ProductsPage() {
 									</button>
 								</h2>
 								<div id="collapseFour" className="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
-									<div className="accordion-body">真空壓縮袋</div>
-									<div className="accordion-body">旅行鞋袋</div>
-									<div className="accordion-body">內衣收納袋</div>
+									<div className="accordion-body" onClick={() => handleCategoryChange("真空壓縮袋")}>
+										真空壓縮袋
+									</div>
+									<div className="accordion-body" onClick={() => handleCategoryChange("旅行鞋袋")}>
+										旅行鞋袋
+									</div>
+									<div className="accordion-body" onClick={() => handleCategoryChange("內衣收納袋")}>
+										內衣收納袋
+									</div>
 								</div>
 							</div>
 							<div className="accordion-item">
@@ -185,9 +224,15 @@ export default function ProductsPage() {
 									</button>
 								</h2>
 								<div id="collapseFive" className="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
-									<div className="accordion-body">折疊背包／手提袋</div>
-									<div className="accordion-body">旅行頸枕／眼罩／耳塞</div>
-									<div className="accordion-body">可折疊水瓶／隨行杯</div>
+									<div className="accordion-body" onClick={() => handleCategoryChange("折疊背包／手提袋")}>
+										折疊背包／手提袋
+									</div>
+									<div className="accordion-body" onClick={() => handleCategoryChange("旅行頸枕／眼罩／耳塞")}>
+										旅行頸枕／眼罩／耳塞
+									</div>
+									<div className="accordion-body" onClick={() => handleCategoryChange("可折疊水瓶／隨行杯")}>
+										可折疊水瓶／隨行杯
+									</div>
 								</div>
 							</div>
 							<div className="accordion-item">
@@ -197,7 +242,9 @@ export default function ProductsPage() {
 									</button>
 								</h2>
 								<div id="collapseSix" className="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample">
-									<div className="accordion-body">可重複使用折疊袋</div>
+									<div className="accordion-body" onClick={() => handleCategoryChange("可重複使用折疊袋")}>
+										可重複使用折疊袋
+									</div>
 								</div>
 							</div>
 						</div>

@@ -8,6 +8,8 @@ const routes = [
 	{ path: "/service", name: "售後服務" },
 	{ path: "/account", name: "登入/註冊" },
 	{ path: "/cart", name: "購物車" },
+	{ path: "/backEnd", name: "後台" },
+	{ path: "/login", name: "登入" },
 ];
 
 export default function FrontLayout() {

@@ -8,6 +8,8 @@ import SalesService from "../pages/SalesServicePage";
 import AccountPage from "../pages/AccountPage";
 import CartPage from "../pages/CartPage";
 import NotFound from "../pages/NotFound";
+import BackEndPage from "../pages/BackEndPage";
+import LoginPage from "../pages/LoginPage";
 
 const router = createHashRouter([
 	{
@@ -31,16 +33,28 @@ const router = createHashRouter([
 				element: <AboutPage />,
 			},
 			{
-				path: "Service",
+				path: "service",
 				element: <SalesService />,
 			},
 			{
 				path: "account",
-				element: <AccountPage/>,
+				element: <AccountPage />,
 			},
 			{
 				path: "cart", // 參考FrontLayout路由
 				element: <CartPage />,
+			},
+			{
+				path: "backEnd", 
+				element: <BackEndPage/>,
+			},
+			// {
+			// 	path: "login", 
+			// 	element: <LoginPage/>,
+			// },
+			{
+				path: "login", 
+				element: <AccountPage/>,
 			},
 		],
 	},

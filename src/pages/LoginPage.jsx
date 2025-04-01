@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import axios from "axios";
+// import { AuthContext } from "../context/AuthContext";
 const BASE_URL = import.meta.env.VITE_BASE_URL;
 
-function LoginPage({ getProducts, setIsAuth }) {
+function LoginPage({ getProducts , setIsAuth}) {
+	//
 	// const checkUserLogin = async () => {
 	// 	try {
 	// 		await axios.post(`${BASE_URL}/v2/api/user/check`);
@@ -18,7 +20,7 @@ function LoginPage({ getProducts, setIsAuth }) {
 	// 	axios.defaults.headers.common["Authorization"] = token;
 	// 	checkUserLogin();
 	// }, []);
-
+	// const { setIsAuth } = useContext(AuthContext);
 	const [account, setAccount] = useState({
 		username: "example@test.com",
 		password: "example",
@@ -42,10 +44,9 @@ function LoginPage({ getProducts, setIsAuth }) {
 			document.cookie = `hexToken=${token}; expires=${new Date(expired)}`;
 
 			axios.defaults.headers.common["Authorization"] = token;
-
-			// getProducts();
-
+			
 			setIsAuth(true);
+			getProducts();
 		} catch (error) {
 			alert("登入失敗");
 			console.error(error);

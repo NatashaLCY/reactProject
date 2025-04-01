@@ -3,6 +3,7 @@ import axios from "axios";
 import Pagination from "../components/Pagination";
 import ProductModal from "../components/ProductModal";
 import DeleteProductModal from "../components/DeleteProductModal";
+import LoginPage from "./LoginPage";
 
 const BASE_URL = import.meta.env.VITE_BASE_URL;
 const API_PATH = import.meta.env.VITE_API_PATH;
@@ -25,6 +26,7 @@ export default function BackEndPage() {
 	const [modalMode, setModalMode] = useState(null);
 	const [isProductModalOpen, setIsProductModalOpen] = useState(false);
 	const [isDelProductModalOpen, setIsDelProductModalOpen] = useState(false);
+    const [isAuth, setIsAuth] = useState(false);
 	const getProducts = async (page = 1) => {
 		try {
             const res = await axios.get(`${BASE_URL}/v2/api/${API_PATH}/admin/products?page=${page}`);
@@ -36,6 +38,10 @@ export default function BackEndPage() {
 		}
 	};
 	useEffect(() => {
+        const token = document.cookie.replace(/(?:(?:^|.*;\s*)hexToken\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+		if (token) {
+			setIsAuth(true); // 如果有 token，就表示已經登入
+		};
 		getProducts();
 	}, []);
 	const handleOpenProductModal = (modal, product) => {
@@ -80,6 +86,8 @@ export default function BackEndPage() {
 
 	return (
 		<>
+        {isAuth ? (
+            <>
 			<div className="container py-5">
 				<div className="row">
 					<div className="col">
@@ -126,6 +134,11 @@ export default function BackEndPage() {
 			</div>
 			<ProductModal isOpen={isProductModalOpen} setIsOpen={setIsProductModalOpen} modalMode={modalMode} tempProduct={tempProduct} getProducts={getProducts} />
 			<DeleteProductModal isOpen={isDelProductModalOpen} setIsOpen={setIsDelProductModalOpen} tempProduct={tempProduct} getProducts={getProducts} />
+            </>
+            ):(
+                <LoginPage setIsAuth={setIsAuth} />
+            )
+        }
 		</>
 	);
 }

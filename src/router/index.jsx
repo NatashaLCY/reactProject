@@ -45,16 +45,16 @@ const router = createHashRouter([
 				element: <CartPage />,
 			},
 			{
-				path: "backEnd", 
-				element: <BackEndPage/>,
+				path: "backEnd",
+				element: <BackEndPage />,
 			},
 			// {
-			// 	path: "login", 
+			// 	path: "login",
 			// 	element: <LoginPage/>,
 			// },
 			{
-				path: "login", 
-				element: <AccountPage/>,
+				path: "login",
+				element: <LoginPage />,
 			},
 		],
 	},

@@ -190,3 +190,17 @@ ul.timeline {
     //     }
     // }    
 }
+    .input-group {
+        display: flex;
+        width: 82%;
+        max-width: 600px; /* 使表單最大寬度 */
+        margin: 0 auto; /* 居中顯示 */
+    }
+
+    .search {
+        border-radius: 4px 4px 4px 4px; /* 圓角設置，左邊圓角 */
+        height: 100%; /* 按鈕高度與輸入框一致 */
+        border: 2px solid #C9DFEE;
+    }
+
+

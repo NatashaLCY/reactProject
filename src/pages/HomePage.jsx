@@ -11,6 +11,12 @@ export default function HomePage() {
 					<div className="carousel-item active position-relative">
 						<img src="https://images.unsplash.com/photo-1522199710521-72d69614c702?q=80&w=1744&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" className="d-block w-100 img-blend" alt="slide01" />
 						<div className="position-absolute top-0 start-0 w-100 h-100 bg-overlay"></div>
+						<div className="bannerText">
+							<div>
+								<h1>專注旅行便利，讓出行更無憂</h1>
+								<button className="btn btn-primary rounded-0">立即選購</button>
+							</div>
+						</div>
 					</div>
 					<div className="carousel-item">
 						<img src="https://images.unsplash.com/flagged/photo-1568041193043-e86f15540986?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" className="d-block w-100" alt="slide02" />
@@ -25,12 +31,6 @@ export default function HomePage() {
 					<span className="carousel-control-prev-icon" aria-hidden="true"></span>
 					<span className="visually-hidden">Previous</span>
 				</button>
-				<div className="bannerText">
-					<div>
-						<h1>專注旅行便利，讓出行更無憂</h1>
-						<button className="btn btn-primary rounded-0">立即選購</button>
-					</div>
-				</div>
 				<button className="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
 					<span className="carousel-control-next-icon" aria-hidden="true"></span>
 					<span className="visually-hidden">Next</span>
@@ -55,7 +55,9 @@ export default function HomePage() {
 									</div>
 								</div>
 							</div>
-							<img src="https://img.freepik.com/free-photo/opened-luggage-sitting-concrete_23-2148328906.jpg?t=st=1740565434~exp=1740569034~hmac=05e7c66a7ef844b71fd2ee2dbde5f24585473cb592d1bef76d5cabefbed1fca2&w=1060" className="card-img-top rounded-0" alt="" />
+							<div className="overflow-hidden" style={{ height: "178px" }}>
+								<img src="https://img.freepik.com/free-photo/opened-luggage-sitting-concrete_23-2148328906.jpg?t=st=1740565434~exp=1740569034~hmac=05e7c66a7ef844b71fd2ee2dbde5f24585473cb592d1bef76d5cabefbed1fca2&w=1060" className="card-img-top rounded-0" alt="" />
+							</div>
 							<div className="card-body d-flex justify-content-between align-items-top border border-primary border-top-0">
 								<div>
 									<h5 className="card-title">行李箱內隔板</h5>
@@ -79,7 +81,9 @@ export default function HomePage() {
 									</div>
 								</div>
 							</div>
-							<img src="https://img.freepik.com/free-photo/opened-luggage-sitting-concrete_23-2148328906.jpg?t=st=1740565434~exp=1740569034~hmac=05e7c66a7ef844b71fd2ee2dbde5f24585473cb592d1bef76d5cabefbed1fca2&w=1060" className="card-img-top rounded-0" alt="" />
+							<div className="overflow-hidden" style={{ height: "178px" }}>
+								<img src="https://img.freepik.com/free-photo/young-girl-holding-cup-warm-drink-outside-winter-day_23-2149328406.jpg?t=st=1744022521~exp=1744026121~hmac=aa50f5d028f9fe0d95468350728ffce1f68974fb885ea9ce3ba590a2159976c8&w=996" className="card-img-top rounded-0" alt="" />
+							</div>
 							<div className="card-body d-flex justify-content-between align-items-top  border border-primary border-top-0">
 								<div>
 									<h5 className="card-title">行李箱內隔板</h5>
@@ -103,7 +107,9 @@ export default function HomePage() {
 									</div>
 								</div>
 							</div>
-							<img src="https://img.freepik.com/free-photo/opened-luggage-sitting-concrete_23-2148328906.jpg?t=st=1740565434~exp=1740569034~hmac=05e7c66a7ef844b71fd2ee2dbde5f24585473cb592d1bef76d5cabefbed1fca2&w=1060" className="card-img-top rounded-0" alt="" />
+							<div className="overflow-hidden" style={{ height: "178px" }}>
+								<img src="https://img.freepik.com/free-photo/close-up-bg-with-clothes-floor_23-2149190445.jpg?t=st=1744022583~exp=1744026183~hmac=f6d71102ee12ff055e81d927168d7815d3878cab1154bd6efd331a292982dea2&w=740" className="card-img-top rounded-0" alt="" />
+							</div>
 							<div className="card-body d-flex justify-content-between align-items-top  border border-primary border-top-0">
 								<div>
 									<h5 className="card-title">行李箱內隔板</h5>
@@ -127,7 +133,9 @@ export default function HomePage() {
 									</div>
 								</div>
 							</div>
-							<img src="https://img.freepik.com/free-photo/opened-luggage-sitting-concrete_23-2148328906.jpg?t=st=1740565434~exp=1740569034~hmac=05e7c66a7ef844b71fd2ee2dbde5f24585473cb592d1bef76d5cabefbed1fca2&w=1060" className="card-img-top rounded-0" alt="" />
+							<div className="overflow-hidden" style={{ height: "178px" }}>
+								<img src="https://img.freepik.com/free-photo/sleeping-person-getting-nap_23-2149141166.jpg?t=st=1744023166~exp=1744026766~hmac=ff7049d076ce30b04f468cc042f9541a58c3050de5b91f85f58006249518754f&w=996" className="card-img-top rounded-0" alt="" />
+							</div>
 							<div className="card-body d-flex justify-content-between align-items-top  border border-primary border-top-0">
 								<div>
 									<h5 className="card-title">行李箱內隔板</h5>

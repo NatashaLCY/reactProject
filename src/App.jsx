@@ -9,6 +9,7 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 // import LoginPage from "./pages/LoginPage";
 const BASE_URL = import.meta.env.VITE_BASE_URL;
 const API_PATH = import.meta.env.VITE_API_PATH;
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC&display=swap" rel="stylesheet"></link>
 
 function App() {
 

@@ -5,6 +5,16 @@
 
 @import 'bootstrap/scss/bootstrap';
 
+@font-face {
+    font-family: 'Noto Serif TC';
+    src: url('/assets/fonts/NotoSerifTC-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Noto Serif TC', serif;
+}
 
 .HighlightYellow{
     background-color: $HighlightYellow;
@@ -193,14 +203,56 @@ ul.timeline {
     .input-group {
         display: flex;
         width: 82%;
-        max-width: 600px; /* 使表單最大寬度 */
-        margin: 0 auto; /* 居中顯示 */
+        max-width: 600px; 
+        margin: 0 auto; 
     }
 
     .search {
-        border-radius: 4px 4px 4px 4px; /* 圓角設置，左邊圓角 */
-        height: 100%; /* 按鈕高度與輸入框一致 */
+        border-radius: 4px 4px 4px 4px; 
+        height: 100%; 
         border: 2px solid #C9DFEE;
+    }
+    .navbar-nav .nav-item .nav-link {
+        color: #3F8CB8;  
+        transition: color 0.3s ease; 
+
+        &:hover {
+            color: #265B7E;  
+        }
+
+        &.active {
+            color: #265B7E;  
+            position: relative; 
+
+            &::after {
+            content: ''; 
+            position: absolute;
+            bottom: 0; 
+            left: 50%; 
+            width: 50%; 
+            height: 2px; 
+            background-color: #265B7E; 
+            transform: translateX(-50%); 
+            }
+        }
     }
 
 
+.square-img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;  /* 保持圖片比例，避免變形 */
+}
+.rectangleImg {
+    width: 196px;
+    height: 117px;
+    object-fit: cover;  /* 保持圖片比例，避免變形 */
+}
+
+/* 圓形圖片 */
+.circle-img {
+    width: 150px;  /* 設置固定的寬度 */
+    height: 150px;  /* 設置固定的高度 */
+    object-fit: cover;  /* 保持圖片比例，避免變形 */
+    border-radius: 50%;  /* 使圖片變圓形 */
+}

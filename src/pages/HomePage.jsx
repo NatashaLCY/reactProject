@@ -154,8 +154,57 @@ export default function HomePage() {
 					<div className="row">
 						<h3 className="text-center pb-8 special-title text-primary-700">新品上架</h3>
 					</div>
-					<div className="row my-3">
-						<div className="card px-0 border-0 me-4 col rounded-0">
+
+					<div className="row">
+						<div className="col-6">
+							<div className="row">
+								<div className="col-6">
+									<img src="https://img.freepik.com/free-photo/close-up-underwear-classification_23-2148857564.jpg?t=st=1744279021~exp=1744282621~hmac=207e1fd53c54b4a5f681945abc6eecdc6e29f877f63e9a440c4d2cd74c475884&w=996" alt="Main Image" className="img-fluid square-img" />
+								</div>
+
+								<div className="col-6">
+									<div className="d-flex flex-column">
+										<img src="https://img.freepik.com/free-photo/close-up-backpack-nature_23-2148927995.jpg?t=st=1744279025~exp=1744282625~hmac=1810d20055fc0fdccfc8b2ea1596bcb58d37d93779989cf91b9ab54d6d644adb&w=740" alt="Image 1" className="img-fluid mb-3 rectangleImg" />
+										<img
+											src="https://img.freepik.com/free-photo/black-garment-bag-suit-storage-protection_53876-106020.jpg?t=st=1744279028~exp=1744282628~hmac=64eeb3b82647f640034a4a347e375fd3152dbedc32366c38a951dc7880868ba4&w=740"
+											alt="Image 2"
+											className="img-fluid mb-3 rectangleImg"
+										/>
+										<img src="https://img.freepik.com/free-photo/top-view-toilet-bag-products-arrangement_23-2149879446.jpg?t=st=1744279031~exp=1744282631~hmac=6da85ed5aaa14568f26526ec7eec93bfbef08c649795a19bea5ac8953e774203&w=996" alt="Image 3" className="img-fluid rectangleImg" />
+									</div>
+								</div>
+							</div>
+						</div>
+						{/* <div className="col-lg-6">
+							<div className="row">
+								<div className="col-6">
+									<img src="https://img.freepik.com/free-photo/close-up-underwear-classification_23-2148857564.jpg?t=st=1744279021~exp=1744282621~hmac=207e1fd53c54b4a5f681945abc6eecdc6e29f877f63e9a440c4d2cd74c475884&w=996" alt="Image 1" className="img-fluid square-img" />
+								</div>
+								<div className="col-6">
+									<div className="row">
+										<div className="col-12 mb-3">
+											<img src="https://img.freepik.com/free-photo/close-up-backpack-nature_23-2148927995.jpg?t=st=1744279025~exp=1744282625~hmac=1810d20055fc0fdccfc8b2ea1596bcb58d37d93779989cf91b9ab54d6d644adb&w=740" alt="Image 2" className="img-fluid rectangleImg" />
+										</div>
+										<div className="col-12 mb-3">
+											<img src="https://img.freepik.com/free-photo/black-garment-bag-suit-storage-protection_53876-106020.jpg?t=st=1744279028~exp=1744282628~hmac=64eeb3b82647f640034a4a347e375fd3152dbedc32366c38a951dc7880868ba4&w=740" alt="Image 3" className="img-fluid rectangleImg" />
+										</div>
+										<div className="col-12">
+											<img src="https://img.freepik.com/free-photo/top-view-toilet-bag-products-arrangement_23-2149879446.jpg?t=st=1744279031~exp=1744282631~hmac=6da85ed5aaa14568f26526ec7eec93bfbef08c649795a19bea5ac8953e774203&w=996" alt="Image 4" className="img-fluid rectangleImg" />
+										</div>
+									</div>
+								</div>
+							</div>
+						</div> */}
+						{/* 右側區域，佔一半的寬度 */}
+						<div className="col-lg-6">
+							<div className="h-100">
+								<h4>收納神器全新登場</h4>
+								<p>還在為準備行李頭痛嗎？</p>
+								<p>全新上架的旅行收納神器，專為解決行李雜亂與空間不足而設計。</p>
+								<p>無論是背包客的簡約需求，還是家庭旅行的多樣收納，都能讓你輕鬆整理，最大利用行李箱空間。</p>
+							</div>
+						</div>
+						{/* <div className="card px-0 border-0 me-4 col rounded-0">
 							<img src="https://img.freepik.com/free-photo/opened-luggage-sitting-concrete_23-2148328906.jpg?t=st=1740565434~exp=1740569034~hmac=05e7c66a7ef844b71fd2ee2dbde5f24585473cb592d1bef76d5cabefbed1fca2&w=1060" className="card-img-top rounded-0" alt="" />
 							<div className="card-body d-flex justify-content-between align-items-top px-0">
 								<div>
@@ -190,7 +239,7 @@ export default function HomePage() {
 									<p className="card-text fs-7">我們不僅賣產品，更關心你的旅途體驗。從購買到使用，提供全程貼心服務，讓你每一次選購都充滿信任與安心。</p>
 								</div>
 							</div>
-						</div>
+						</div> */}
 					</div>
 				</div>
 			</div>

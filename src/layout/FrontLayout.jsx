@@ -6,10 +6,31 @@ const routes = [
 	{ path: "/products", name: "產品分類" },
 	{ path: "/about", name: "關於旅人集所" },
 	{ path: "/service", name: "售後服務" },
-	{ path: "/account", name: "登入/註冊" },
-	{ path: "/cart", name: <i class="bi bi-cart3"></i> },
+	{
+		path: "/account",
+		name: (
+			<span className="px-3 " style={{ backgroundColor: "#3F8CB8", color: "#ffffff", padding: "12px 0" }}>
+				登入/註冊
+			</span>
+		),
+	},
+	{ path: "/cart", name: <i class="bi bi-cart3" style={{ color: "#3F8CB8" }}></i> },
 	{ path: "/backEnd", name: "後台" },
-	{ path: "/login", name: "登入" },
+	// { path: "/", name: <span style={{ color: "#3F8CB8" }}>首頁</span> },
+	// { path: "/products", name: <span style={{ color: "#3F8CB8" }}>產品分類</span> },
+	// { path: "/about", name: <span style={{ color: "#3F8CB8" }}>關於旅人集所</span> },
+	// { path: "/service", name: <span style={{ color: "#3F8CB8" }}>售後服務</span> },
+	// {
+	// 	path: "/account",
+	// 	name: (
+	// 		<span className="px-3 " style={{ backgroundColor: "#3F8CB8", color: "#ffffff", padding: "12px 0" }}>
+	// 			登入/註冊
+	// 		</span>
+	// 	),
+	// },
+	// { path: "/cart", name: <i class="bi bi-cart3" style={{ color: "#3F8CB8" }}></i> },
+	// { path: "/backEnd", name: <span style={{ color: "#3F8CB8" }}>後台</span> },
+	// { path: "/login", name: <span style={{ color: "#3F8CB8" }}>登入</span> },
 ];
 
 export default function FrontLayout() {
@@ -17,7 +38,7 @@ export default function FrontLayout() {
 		<>
 			<div className="container">
 				<nav className="navbar navbar-expand-lg" aria-label="Fourth navbar example">
-					<div className="container-fluid ">
+					<div className="container-fluid d-flex justify-content-end">
 						<a className="navbar-brand" href="#">
 							logo
 						</a>
@@ -26,65 +47,22 @@ export default function FrontLayout() {
 								<input className="form-control" type="search" placeholder="多項商品熱賣中|" aria-label="Search" />
 								<button className="btn bg-white" type="submit">
 									<i class="bi bi-search" style={{ color: "#C9DFEE", transform: "scale(1.2)", fontSize: "1rem", fontWeight: "bold" }}></i>
-									
 								</button>
 							</div>
 						</form>
 						<button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
 							<span className="navbar-toggler-icon"></span>
 						</button>
-						<div className="collapse navbar-collapse d-flex justify-content-end" id="navbarsExample04">
-							<ul className="navbar-nav mb-2 mb-lg-0 ">
+						<div className="collapse navbar-collapse" id="navbarsExample04">
+							<ul className="navbar-nav mb-2 mb-lg-0">
 								{routes.map((route) => (
-									<li className="nav-item" key={route.path}>
+									<li className="nav-item text-end" key={route.path}>
 										<NavLink className="nav-link" aria-current="page" to={route.path}>
 											{route.name}
 										</NavLink>
 									</li>
 								))}
 							</ul>
-							{/* <ul className="navbar-nav me-auto mb-2 mb-md-0">
-								<li className="nav-item">
-									<a className="nav-link active" aria-current="page" href="#">
-										Home
-									</a>
-								</li>
-								<li className="nav-item">
-									<a className="nav-link" href="#">
-										Link
-									</a>
-								</li>
-								<li className="nav-item">
-									<a className="nav-link disabled" aria-disabled="true">
-										Disabled
-									</a>
-								</li>
-								<li className="nav-item dropdown">
-									<a className="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">
-										Dropdown
-									</a>
-									<ul className="dropdown-menu">
-										<li>
-											<a className="dropdown-item" href="#">
-												Action
-											</a>
-										</li>
-										<li>
-											<a className="dropdown-item" href="#">
-												Another action
-											</a>
-										</li>
-										<li>
-											<a className="dropdown-item" href="#">
-												Something else here
-											</a>
-										</li>
-									</ul>
-								</li>
-							</ul> */}
-							{/* <form role="search">
-								<input className="form-control" type="search" placeholder="Search" aria-label="Search" />
-							</form> */}
 						</div>
 					</div>
 				</nav>

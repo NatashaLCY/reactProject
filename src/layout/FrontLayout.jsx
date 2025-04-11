@@ -1,5 +1,5 @@
-import { NavLink, Outlet } from 'react-router-dom';
-import LogoLB from '../assets/img/logo_LB.png'
+import { NavLink, Outlet } from "react-router-dom";
+import LogoLB from "../assets/img/logo_LB.png";
 
 const routes = [
 	{ path: "/", name: "首頁" },
@@ -14,7 +14,7 @@ const routes = [
 			</span>
 		),
 	},
-	{ path: "/cart", name: <i class="bi bi-cart3" style={{ color: "#3F8CB8" }}></i> },
+	{ path: "/cart", name: <i className="bi bi-cart3" style={{ color: "#3F8CB8" }}></i> },
 	{ path: "/backEnd", name: "後台" },
 	// { path: "/", name: <span style={{ color: "#3F8CB8" }}>首頁</span> },
 	// { path: "/products", name: <span style={{ color: "#3F8CB8" }}>產品分類</span> },
@@ -28,13 +28,13 @@ const routes = [
 	// 		</span>
 	// 	),
 	// },
-	// { path: "/cart", name: <i class="bi bi-cart3" style={{ color: "#3F8CB8" }}></i> },
+	// { path: "/cart", name: <i className="bi bi-cart3" style={{ color: "#3F8CB8" }}></i> },
 	// { path: "/backEnd", name: <span style={{ color: "#3F8CB8" }}>後台</span> },
 	// { path: "/login", name: <span style={{ color: "#3F8CB8" }}>登入</span> },
 ];
 
 export default function FrontLayout() {
-    return (
+	return (
 		<>
 			<div className="container">
 				<nav className="navbar navbar-expand-lg" aria-label="Fourth navbar example">
@@ -46,7 +46,7 @@ export default function FrontLayout() {
 							<div className="input-group bg-light search">
 								<input className="form-control" type="search" placeholder="多項商品熱賣中|" aria-label="Search" />
 								<button className="btn bg-white" type="submit">
-									<i class="bi bi-search" style={{ color: "#C9DFEE", transform: "scale(1.2)", fontSize: "1rem", fontWeight: "bold" }}></i>
+									<i className="bi bi-search" style={{ color: "#C9DFEE", transform: "scale(1.2)", fontSize: "1rem", fontWeight: "bold" }}></i>
 								</button>
 							</div>
 						</form>

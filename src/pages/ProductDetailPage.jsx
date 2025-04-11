@@ -48,6 +48,19 @@ export default function ProductsDetailPage() {
         }
     };
 
+		// 設定大圖的 state，預設顯示第一張圖片
+		const [mainImage, setMainImage] = useState("https://media.istockphoto.com/id/1185610086/photo/vacuum-compress-bag-for-clothes-with-small-and-easy-hand-pump-for-expanded-your-space-storage.jpg?s=1024x1024&w=is&k=20&c=9tXpZamEkdqN46foJbNGYrEQF4VdsixI5ibVC5mGBvo=");
+
+		// 當點擊縮圖時，更新大圖
+		const changeImage = (imageUrl) => {
+			setMainImage(imageUrl);
+		};
+
+		const [activeTab, setActiveTab] = useState("nav-home");
+
+		const handleTabClick = (tabName) => {
+			setActiveTab(tabName);
+		};
 
 
 	return (
@@ -67,7 +80,40 @@ export default function ProductsDetailPage() {
 			<div className="container my-8">
 				<div className="row">
 					<div className="col-6">
-						<img className="img-fluid" src={product.imageUrl} alt={product.title} />
+						<div className="d-flex flex-column">
+							<div className="col mb-3">
+								<img id="main-image" src={mainImage} alt="Main Image" className="img-fluid" />
+							</div>
+							<div className="col">
+								<div className="d-flex flex-row">
+									<img
+										src="https://media.istockphoto.com/id/1185610086/photo/vacuum-compress-bag-for-clothes-with-small-and-easy-hand-pump-for-expanded-your-space-storage.jpg?s=1024x1024&w=is&k=20&c=9tXpZamEkdqN46foJbNGYrEQF4VdsixI5ibVC5mGBvo="
+										alt="Thumbnail 1"
+										className="img-fluid w-25 me-3"
+										onClick={() => changeImage("https://media.istockphoto.com/id/1185610086/photo/vacuum-compress-bag-for-clothes-with-small-and-easy-hand-pump-for-expanded-your-space-storage.jpg?s=1024x1024&w=is&k=20&c=9tXpZamEkdqN46foJbNGYrEQF4VdsixI5ibVC5mGBvo=")}
+									/>
+									<img
+										src="https://media.istockphoto.com/id/1004830588/photo/crossed-belts-on-vacuum-compress-bag-for-clothes.jpg?s=1024x1024&w=is&k=20&c=k2ZWw9rvy8H534Bvm2VH0cJ4bGuFHLI8ufFs9aqR4yo="
+										alt="Thumbnail 2"
+										className="img-fluid w-25 me-3"
+										onClick={() => changeImage("https://media.istockphoto.com/id/1004830588/photo/crossed-belts-on-vacuum-compress-bag-for-clothes.jpg?s=1024x1024&w=is&k=20&c=k2ZWw9rvy8H534Bvm2VH0cJ4bGuFHLI8ufFs9aqR4yo=")}
+									/>
+									<img
+										src="https://media.istockphoto.com/id/1004830604/photo/crossed-belts-on-vacuum-compress-bag.jpg?s=1024x1024&w=is&k=20&c=iWrk4HA5BXe1QrP1Iza3BFfwR8CClrFWwuLE8w_bfF0="
+										alt="Thumbnail 3"
+										className="img-fluid w-25 me-3"
+										onClick={() => changeImage("https://media.istockphoto.com/id/1004830604/photo/crossed-belts-on-vacuum-compress-bag.jpg?s=1024x1024&w=is&k=20&c=iWrk4HA5BXe1QrP1Iza3BFfwR8CClrFWwuLE8w_bfF0=")}
+									/>
+									<img
+										src="https://media.istockphoto.com/id/1004830624/photo/crossed-belts-on-vacuum-compress-bag-for-clothes.jpg?s=1024x1024&w=is&k=20&c=gOKZYOP5Bqhic_7SjvVZ-c4Xu8ReJU5k6fudGqQcCS8="
+										alt="Thumbnail 3"
+										className="img-fluid w-25"
+										onClick={() => changeImage("https://media.istockphoto.com/id/1004830624/photo/crossed-belts-on-vacuum-compress-bag-for-clothes.jpg?s=1024x1024&w=is&k=20&c=gOKZYOP5Bqhic_7SjvVZ-c4Xu8ReJU5k6fudGqQcCS8=")}
+									/>
+								</div>
+							</div>
+						</div>
+						{/* <img className="img-fluid" src={product.imageUrl} alt={product.title} /> */}
 					</div>
 					<div className="col-6">
 						<div className="d-flex align-items-center gap-2">
@@ -89,6 +135,47 @@ export default function ProductsDetailPage() {
 								加入購物車
 								{isLoading && <ReactLoading type={"spin"} color={"#000"} height={"1.5rem"} width={"1.5rem"} />}
 							</button>
+						</div>
+					</div>
+				</div>
+				<div className="row">
+					<nav>
+						<div className="nav nav-tabs" id="nav-tab" role="tablist">
+							<button className={`nav-link ${activeTab === "nav-home" ? "active" : ""}`} id="nav-home-tab" type="button" role="tab" aria-controls="nav-home" aria-selected={activeTab === "nav-home"} onClick={() => handleTabClick("nav-home")}>
+								產品說明
+							</button>
+							<button className={`nav-link ${activeTab === "nav-profile" ? "active" : ""}`} id="nav-profile-tab" type="button" role="tab" aria-controls="nav-profile" aria-selected={activeTab === "nav-profile"} onClick={() => handleTabClick("nav-profile")}>
+								注意事項
+							</button>
+							<button className={`nav-link ${activeTab === "nav-contact" ? "active" : ""}`} id="nav-contact-tab" type="button" role="tab" aria-controls="nav-contact" aria-selected={activeTab === "nav-contact"} onClick={() => handleTabClick("nav-contact")}>
+								產品規格
+							</button>
+						</div>
+					</nav>
+
+					<div className="tab-content" id="nav-tabContent">
+						<div className={`tab-pane fade ${activeTab === "nav-home" ? "show active" : ""}`} id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+							<ul className="list-group list-group-flush">
+								<li className="list-group-item">採用特殊防滑板材，貼合襪子和西裝的劃算</li>
+								<li className="list-group-item">使用高韌性防壓材料，防止行李中其他物品對衣物造成壓縮損壞</li>
+								<li className="list-group-item">配有分隔設計，可同時存放領帶或其他物品配件</li>
+								<li className="list-group-item">簡約大氣的外觀，適合差旅場合</li>
+							</ul>
+						</div>
+						<div className={`tab-pane fade ${activeTab === "nav-profile" ? "show active" : ""}`} id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+							<ul className="list-group list-group-flush">
+								<li className="list-group-item">此產品不適用於高溫環境</li>
+								<li className="list-group-item">建議手洗，避免機洗損壞</li>
+								<li className="list-group-item">請避免長時間暴露於陽光下</li>
+							</ul>
+						</div>
+						<div className={`tab-pane fade ${activeTab === "nav-contact" ? "show active" : ""}`} id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+							<ul className="list-group list-group-flush">
+								<li className="list-group-item">材質：防水聚酯纖維</li>
+								<li className="list-group-item">尺寸：45cm x 30cm x 10cm</li>
+								<li className="list-group-item">顏色：黑色</li>
+								<li className="list-group-item">重量：1.2kg</li>
+							</ul>
 						</div>
 					</div>
 				</div>
